@@ -1,12 +1,14 @@
 <?php
-require_once("./database.php");
+require_once("./SessionManager.php");
 
-if (isset($_SESSION['userID']) && isset($_SESSION['userType'])) {
-    if ($_SESSION['userType'] == 1) {
-        header("Location: ./userview.php");
+if (!SessionManager::isLogged()) {
+    if (!SessionManager::isAdmin()){
+		header("Location: ./index.php");
+		exit();
     }
 } else {
     header("Location: ./index.php");
+	exit();
 }
 
 $db = new Database();
