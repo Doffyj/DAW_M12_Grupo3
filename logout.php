@@ -1,6 +1,5 @@
 <?php
-    session_start();
-    unset($_SESSION["userID"]);
-    unset($_SESSION["userType"]);
+    require_once("./SessionManager.php");
+    SessionManager::logout();
     header("Location: ./index.php");
 ?>
