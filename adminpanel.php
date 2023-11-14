@@ -1,14 +1,9 @@
 <?php
-require_once("./SessionManager.php");
+require_once("./database.php");
 
-if (!SessionManager::isLogged()) {
-    if (!SessionManager::isAdmin()){
-		header("Location: ./index.php");
-		exit();
-    }
-} else {
+if (!SessionManager::isLogged() || !SessionManager::isAdmin()) {
     header("Location: ./index.php");
-	exit();
+    exit();
 }
 
 $db = new Database();
