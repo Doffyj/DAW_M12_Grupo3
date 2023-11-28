@@ -1,10 +1,11 @@
 <?php
 require_once("./database.php");
 
-if (!SessionManager::isLogged() || !SessionManager::isAdmin()) {
-    header("Location: ./index.php");
-    exit();
-}
+//if (!SessionManager::isLogged() || !SessionManager::isAdmin()) {
+//if (!SessionManager::isLogged() || !SessionManager::isAdmin()) {
+//    header("Location: ./index.php");
+//    exit();
+//}
 
 $db = new Database();
 $userNamesAndIds = $db->getUserNamesAndIdsList();
@@ -22,7 +23,8 @@ $userNamesAndIds = $db->getUserNamesAndIdsList();
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Admin Panel</a>
+            <a class="navbar-brand" href="">Admin Panel</a>
+			<a class="navbar-brand" href="./index.html">Index</a>
             <small class="text-light"><a href="logout.php">Log Out</a></small>
         </div>
     </nav>
@@ -39,7 +41,7 @@ $userNamesAndIds = $db->getUserNamesAndIdsList();
                             <a class="btn btn-warning" role="button" href="edituser.php?id=<?php echo $userId; ?>">Edit</a>
                         </div>
                         <div class="col-auto">
-                            <a class="btn btn-danger" role="button" href="deleteuser.php?id=<?php echo $userId; ?>">Delete</a>
+                            <a class="btn btn-danger" role="button" onclick="return confirm('Are you sure?');" href="deleteuser.php?id=<?php echo $userId; ?>">Delete</a>
                         </div>
                     </div>
                 </li>

@@ -19,7 +19,7 @@ if (!SessionManager::isLogged()){
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">User View</a>
+            <a class="navbar-brand" href="">User View</a>
             <small class="text-light"><a href="logout.php">Log Out</a></small>
         </div>
     </nav>

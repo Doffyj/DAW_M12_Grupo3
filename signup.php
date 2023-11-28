@@ -29,6 +29,7 @@ if (SessionManager::isLogged()) {
             <input type="text" class="logininput" name="username" placeholder="username">
             <input type="password" class="logininput" name="password" placeholder="password">
             <input type="submit" class="btn btn-primary" id="loginbutton" value="Signup">
+			<p class="d-block mt-2">Already registered? <a href="login.php" >Log in</a></p>
         </form>
     </div>
 </body>
